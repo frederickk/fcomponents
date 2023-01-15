@@ -1,0 +1,78 @@
+@use '../mixins';
+@import '../_defs';
+
+:host([simple]) {
+  border: 0;
+  width: 52px;
+}
+
+:host {
+  @include mixins.transition(background-color, border);
+
+  background-color: var(--white);
+  border: 1px solid var(--grey-900);
+  border-radius: 36px;
+  cursor: pointer;
+  display: block;
+  max-height: 36px;
+  min-height: 36px;
+  // overflow: hidden;
+
+  // TODO: Determine why this isn't inherited through imported '_defs'.
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &:hover {
+    border: 1px solid var(--white);
+  }
+
+  .button {
+    @include mixins.transition(background-color, color);
+
+    align-items: center;
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 36px;
+    color: var(--grey-900);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+    max-height: 36px;
+    min-height: 36px;
+    padding-inline: var(--spacing--sm);
+    width: 100%;
+
+    &:disabled,
+    &:hover {
+      color: var(--white);
+    }
+
+    &:disabled {
+      background-color: var(--grey-200);
+    }
+
+    &:hover {
+      background-color: var(--grey-900);
+    }
+
+    &--hidden {
+      visibility: collapse;
+      display: none;
+    }
+  }
+}

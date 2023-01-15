@@ -1,0 +1,38 @@
+{
+  "name": "@frederickk/fcomponents",
+  "version": "0.1.0",
+  "description": "LitElements of common UI elements",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frederickk/fcomponents.git"
+  },
+  "keywords": [
+    "web",
+    "components",
+    "lit",
+    "elements",
+    "lit",
+    "typescript",
+    "ui"
+  ],
+  "author": "Ken Frederick <ken.frederick@gmx.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frederickk/fcomponents/issues"
+  },
+  "homepage": "https://github.com/frederickk/fcomponents#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@types/prismjs": "^1.26.0",
+    "highlight.js": "^11.7.0",
+    "lit": "^2.5.0",
+    "lit-scss-loader": "^2.0.1",
+    "prismjs": "^1.29.0"
+  }
+}
