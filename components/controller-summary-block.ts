@@ -1,8 +1,10 @@
+/**
+ * @fileoverview Panel to contain markdown content.
+ */
+
 import {html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import {oneAIResponseHandler} from '../ts/api-handlers';
 import marked from '../ts/marked';
-import * as log from '../../globals/log';
 
 // @ts-ignore
 import Style from './controller-summary-block.scss';
@@ -63,11 +65,11 @@ export class SummaryBlock extends LitElement {
       this.isEmpty_ = await false;
       this.elemEmpty_.innerHTML = await `<chat-pending visible></chat-pending>`;
 
-      const res = await oneAIResponseHandler(this.src);
-      log.log(JSON.stringify(res, null, 2));
+      // const res = await oneAIResponseHandler(this.src);
+      // console.log(JSON.stringify(res, null, 2));
 
-      await this.populateTopics_(res.topics);
-      await this.populateSummaryText_(res.summary.text, res.stats.wordCount);
+      // await this.populateTopics_(res.topics);
+      // await this.populateSummaryText_(res.summary.text, res.stats.wordCount);
     } else {
       this.isEmpty_ = await true;
       // this.elemEmpty_.innerHTML = await this.placeholder;

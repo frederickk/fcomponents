@@ -1,4 +1,4 @@
-@import '../_defs';
+@import '../scss/_defs';
 
 @mixin error-mod($prefix: '.chat') {
   #{$prefix}--error {

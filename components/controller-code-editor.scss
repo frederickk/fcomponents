@@ -1,8 +1,8 @@
-@use '../mixins';
-@import '../_defs';
-@import '../tooltip.scss';
-@import '../../../node_modules/prismjs/themes/prism.css';
-@import '../../../node_modules/prismjs/themes/prism-okaidia.css';
+@use '../scss/mixins';
+@import '../scss/_defs';
+@import '../scss/tooltip.scss';
+@import '~prismjs/themes/prism.css';
+@import '~prismjs/themes/prism-okaidia.css';
 
 @mixin typography {
   font-size: var(--font-size--md);

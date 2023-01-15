@@ -101,7 +101,7 @@ export class CodeEditor extends LitElement {
   updated() {
     // TODO: Why is this necessary?
     this.value = this.elemEditor_.value;
-    log.log(`"#${this.id}" code-editor updated`);
+    console.log(`"#${this.id}" code-editor updated`);
     this.updateHighlight_();
   }
 

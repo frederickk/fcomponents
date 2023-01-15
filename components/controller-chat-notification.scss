@@ -1,6 +1,6 @@
 @use 'controller-chat';
-@use '../mixins';
-@import '../_defs';
+@use '../scss/mixins';
+@import '../scss/_defs';
 
 :host {
   @include controller-chat.error-mod();

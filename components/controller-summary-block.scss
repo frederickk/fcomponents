@@ -1,6 +1,6 @@
-@use '../mixins';
-@import '../_defs';
-@import '../overrides.scss';
+@use '../scss/mixins';
+@import '../scss/_defs';
+@import '../scss/marked';
 
 @mixin before-label($text) {
   &::before {

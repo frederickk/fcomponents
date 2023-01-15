@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Text input field handles ⌘+Enter for submit.
+ */
+
 import {html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
 

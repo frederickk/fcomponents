@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "ES2020"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./",
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2016",
+    "typeRoots": [
+      "./node_modules/@types",
+    ]
+  },
+  "exclude": [
+    ".git",
+    "node_modules"
+  ],
+  "include": [
+    "./**/*",
+    "node_modules/lit-scss-loader/types.d.ts"
+  ]
+}

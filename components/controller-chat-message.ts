@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Chat message with name and avatar.
+ */
+
 import {html, LitElement} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
 

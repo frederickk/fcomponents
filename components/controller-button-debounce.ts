@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Button with a brief disabled period to avoid double click.
+ */
+
 import {html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 

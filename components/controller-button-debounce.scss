@@ -1,5 +1,5 @@
-@use '../mixins';
-@import '../_defs';
+@use '../scss/mixins';
+@import '../scss/_defs';
 
 :host([simple]) {
   border: 0;

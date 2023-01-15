@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Toggle button with debounce.
+ */
+
 import {ButtonDebounce} from './controller-button-debounce';
 import {html} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';

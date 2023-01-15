@@ -5,19 +5,15 @@
   }
 }
 
-// Defines passive type for labels and notifications.
-@mixin passive-type {
-  color: var(--grey-600);
-  font-size: var(--font-size--md);
-}
+// Hides scrollbar UI element.
+@mixin hide-scrollbar() {
+  -ms-overflow-style: none;
 
-// Defines pill shapes.
-@mixin pill($background-color) {
-  background-color: $background-color;
-  border-radius: 1em;
-  font-weight: normal;
-  padding: 0.05em 1ch;
-  white-space: nowrap;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // Media Query wrapper.
@@ -58,6 +54,21 @@
       @content;
     }
   }
+}
+
+// Defines passive type for labels and notifications.
+@mixin passive-type {
+  color: var(--grey-600);
+  font-size: var(--font-size--md);
+}
+
+// Defines pill shapes.
+@mixin pill($background-color) {
+  background-color: $background-color;
+  border-radius: 1em;
+  font-weight: normal;
+  padding: 0.05em 1ch;
+  white-space: nowrap;
 }
 
 // Transition.

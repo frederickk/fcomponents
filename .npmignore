@@ -1,0 +1,11 @@
+# Directories
+node_modules
+tests
+
+# Configs
+.editorconfig
+tsconfig.json
+webpack.config.js
+
+# Misc.
+README.md

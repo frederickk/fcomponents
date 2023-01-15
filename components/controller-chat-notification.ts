@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Notification message.
+ */
+
 import {html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
