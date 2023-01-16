@@ -23,13 +23,13 @@ export class ButtonToggle extends ButtonDebounce {
   state_ = 0;
 
   @property({type: String})
-  active = 'primary';
+  active = 'off';
 
-  @query('#primary')
-  private valuePrimaryElem_!: HTMLElement;
+  @query('#off')
+  private valueOffElem_!: HTMLElement;
 
-  @query('#alternate')
-  private valueAltElem_!: HTMLElement;
+  @query('#on')
+  private valueOnElem_!: HTMLElement;
 
   render() {
     return html `
@@ -40,29 +40,25 @@ export class ButtonToggle extends ButtonDebounce {
           ?disabled=${this.disabled}
           @click="${this.clickHandler_}">
         <span id="off">
-          <slot name="off">primary</slot>
+          <slot name="off">off</slot>
         </span>
         <span id="on" class="button--hidden">
-          <slot name="on">alternate</slot>
+          <slot name="on">on</slot>
         </span>
       </button>
     `;
   }
 
   /** Adjusts state of element based on 'active' property. */
-  updated(changedProperties: Map<string, any>) {
-    if (changedProperties.has('active')) {
-      const active = changedProperties.get('active');
-      if (active === 'primary') {
-        this.state_ = 0;
-        this.valuePrimaryElem_.classList.add('button--hidden');
-        this.valueAltElem_.classList.remove('button--hidden');
-      } else if (active === 'alternate') {
-        this.state_ = 1;
-        this.valuePrimaryElem_.classList.remove('button--hidden');
-        this.valueAltElem_.classList.add('button--hidden');
-      }
-    }
+  updated(_changedProperties: Map<string, any>) {
+  //   if (changedProperties.has('active')) {
+  //     const active = changedProperties.get('active');
+  //     if (active === 'off') {
+  //       this.state_ = 0;
+  //     } else if (active === 'on') {
+  //       this.state_ = 1;
+  //     }
+  //   }
   }
 
   /** Handles button clicks, fires both 'click-debounce' and value events. */
@@ -71,23 +67,21 @@ export class ButtonToggle extends ButtonDebounce {
 
     this.toggleState_();
 
-    let eventName = (<HTMLElement>this.valuePrimaryElem_.children[0]).innerHTML;
-    if (this.state_ === 1) {
-      eventName =(<HTMLElement>this.valueAltElem_.children[0]).innerHTML;
-    }
-    const event = new CustomEvent(eventName.toLowerCase(), {
+    const eventName = (this.state_ === 0)
+      ? 'off'
+      : 'on';
+    const event = new CustomEvent(eventName, {
       bubbles: true,
       composed: true,
     });
     this.dispatchEvent(event);
-
     this.requestUpdate();
   }
 
   /** Toggles classes of value slots. */
   toggleState_() {
     this.state_ = (this.state_ === 0 ? 1 : 0);
-    this.valuePrimaryElem_.classList.toggle('button--hidden');
-    this.valueAltElem_.classList.toggle('button--hidden');
+    this.valueOffElem_.classList.toggle('button--hidden');
+    this.valueOnElem_.classList.toggle('button--hidden');
   }
 }

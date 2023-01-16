@@ -1,4 +1,4 @@
-@import 'scss/_defs';
-@import 'scss/marked';
-@import 'scss/mixins';
-@import 'scss/tooltip';
+@forward 'scss/_defs';
+@forward 'scss/mixins';
+@forward 'scss/marked';
+@forward 'scss/tooltip';

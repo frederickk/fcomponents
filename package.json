@@ -1,6 +1,6 @@
 {
   "name": "@frederickk/fcomponents",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "LitElements of common UI elements",
   "main": "index.ts",
   "scripts": {
