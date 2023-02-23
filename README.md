@@ -1,37 +1,37 @@
 # FComponents
 
-v0.3.0
+v0.3.1
 
 ### LitElements/Web components of common UI elements.
 
 ---
 ### Install
 
-```
-$npm i -D @frederickk/fcomponents
+```bash
+$ npm i -D @frederickk/fcomponents
 ```
 
 If using webpack, add this to your config.
 
 ```js
-  module: {
-    rules: [{
-      test: /\.css|\.s(c|a)ss$/,
-      use: [
-        {
-          loader: 'lit-scss-loader',
-          options: {},
-        },
-        'extract-loader',
-        'css-loader',
-        'sass-loader'
-      ],
-      include: [
-        // You need to tell WebPack where to look for the component SCSS files.
-        path.resolve(__dirname, 'node_modules/@frederickk/fcomponents/components'),
-      ],
-    }],
-  }
+module: {
+  rules: [{
+    test: /\.css|\.s(c|a)ss$/,
+    use: [
+      {
+        loader: 'lit-scss-loader',
+        options: {},
+      },
+      'extract-loader',
+      'css-loader',
+      'sass-loader'
+    ],
+    include: [
+      // You need to tell WebPack where to look for the component SCSS files.
+      path.resolve(__dirname, 'node_modules/@frederickk/fcomponents/components'),
+    ],
+  }],
+}
 ```
 
 ---
@@ -43,20 +43,13 @@ Extends `HTMLButtonElement`
 
 **API**
 
-| Property | Description |
-| --- |
-| `active`
-| `disabled`
+| Event            | Type             | Description |
+| ---------------- | ---------------- | ----------- |
+| `active`         | `Property`       |             |
+| `disabled`       | `Property`       |             |
+| `click-debounce` | `CustomEvent`    |             |
+| `disabled`       | `CustomEvent`    |             |
 
-| Event | Description |
-| ------ |
-| `click-debounce`
-| `disabled`
-
-
-**Events**
-
-`click-debounce` CustomEvent
 
 ```js
 const buttonDebounce = document.querySelector('button-toggle');
@@ -77,32 +70,23 @@ protected handlerOnEvent_() {
 };
 ```
 
+---
 ## Button Toggle
 
 Extends [`Button Debounce`](#button-debounce);
 
 The **Button Toggle** is a button with 2 states `on` and `off`. Theses states can have different visuals by using the `slot` property within your element.
 
-**Properties**
-
-| Property | Description |
-| --- |
-| `active`
-| `disabled`
-
-**Events**
+**API**
 
 | Event            | Type             | Description |
-| ---------------- | ---------------- | |
+| ---------------- | ---------------- | ----------- |
+| `active`         | `Property`       |             |
+| `disabled`       | `Property`       |             |
 | `click-debounce` | `CustomEvent`    | inherited from [**Button Debounce**](#button-debounce) |
 | `on`             | `CustomEvent`    | |
 | `off`            | `CustomEvent`    | |
 
-
-`click-debounce` CustomEvent
-
-
-`on`
 
 ```js
 const buttonToggle = document.querySelector('button-toggle');

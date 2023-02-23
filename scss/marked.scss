@@ -1,6 +1,8 @@
 @use 'mixins';
 @import '_defs';
 
+@include mixins.material-symbols;
+
 chat-message {
   :first-child {
     margin: 0 !important;
@@ -29,7 +31,9 @@ chat-message {
 
     .material-symbols-outlined {
       font-size: inherit;
+      font-variation-settings: 'wght' 401;
       transform: translateY(0.25em);
+      -webkit-font-variation-settings: 'wght' 401;
     }
   }
 
